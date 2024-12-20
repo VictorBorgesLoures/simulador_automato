@@ -1,5 +1,4 @@
-import { createBrowserRouter } from "react-router-dom"
-import GitPageWrapper from './pages/GitPageWrapper'
+import { createHashRouter } from "react-router-dom"
 import App from './App'
 import Automato from './pages/Automato'
 import AutomatoHome from './pages/AutomatoHome'
@@ -10,56 +9,51 @@ import Minimizar from "./pages/Minimizar"
 import Leitor from "./pages/Leitor"
 import NotFound from "./pages/notFound"
 
-const router = createBrowserRouter(
+const router = createHashRouter(
     [
+
         {
-            path: "simulador_automato",
-            element: <GitPageWrapper />,
+            path: "",
+            element: <App />,
             children: [
                 {
                     path: "",
-                    element: <App />,
-                    children: [
-                        {
-                            path: "",
-                            element: <Home />
+                    element: <Home />
 
-                        },
-                        {
-                            path: "formulario",
-                            element: <Formulario />
-                        },
-                        {
-                            path: "*",
-                            element: <NotFound />
-                        }
-                    ],
                 },
                 {
-                    path: "automato",
-                    element: <Automato />,
-                    children: [
-                        {
-                            path: "",
-                            element: <AutomatoHome />
-                        },
-                        {
-                            path: "conversor",
-                            element: <Conversor />
-                        },
-                        {
-                            path: "minimizacao",
-                            element: <Minimizar />
-                        },
-                        {
-                            path: "leitor",
-                            element: <Leitor />
-                        },
-                        {
-                            path: "*",
-                            element: <NotFound />
-                        }
-                    ]
+                    path: "formulario",
+                    element: <Formulario />
+                },
+                {
+                    path: "*",
+                    element: <NotFound />
+                }
+            ],
+        },
+        {
+            path: "automato",
+            element: <Automato />,
+            children: [
+                {
+                    path: "",
+                    element: <AutomatoHome />
+                },
+                {
+                    path: "conversor",
+                    element: <Conversor />
+                },
+                {
+                    path: "minimizacao",
+                    element: <Minimizar />
+                },
+                {
+                    path: "leitor",
+                    element: <Leitor />
+                },
+                {
+                    path: "*",
+                    element: <NotFound />
                 }
             ]
         }
