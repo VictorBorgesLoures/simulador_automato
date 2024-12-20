@@ -45,7 +45,7 @@ export default () => {
             setState({ ...formState, erros: af.listErros() });
         } else {
             af.save();
-            navigate("/automato");
+            navigate("../automato");
         }
     }
 

@@ -15,28 +15,28 @@ export default (): ReactNode => {
                             <NavLink className={({ isActive }) => {
                                 return isActive ? "nav-link active" : "nav-link";
                             }} end to={{
-                                pathname: "/automato"
+                                pathname: ""
                             }}>Autômato</NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink className={({ isActive }) => {
                                 return isActive ? "nav-link active" : "nav-link";
                             }} to={{
-                                pathname: "/automato/conversor"
+                                pathname: "./conversor"
                             }}>Conversor</NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink className={({ isActive }) => {
                                 return isActive ? "nav-link active" : "nav-link";
                             }} to={{
-                                pathname: "/automato/minimizacao"
+                                pathname: "./minimizacao"
                             }}>Minimização</NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink className={({ isActive }) => {
                                 return isActive ? "nav-link active" : "nav-link";
                             }} to={{
-                                pathname: "/automato/leitor"
+                                pathname: "./leitor"
                             }}>Leitor</NavLink>
                         </li>
                     </ul>

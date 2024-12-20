@@ -8,7 +8,7 @@ export default (): ReactNode => {
             <nav className="container navbar navbar-expand-lg navbar-light bg-light">
                 <NavLink className={({ isActive }) => {
                     return isActive ? "navbar-brand nav-link active" : "navbar-brand nav-link";
-                }} to="/">AF</NavLink>
+                }} end to="./">AF</NavLink>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -17,7 +17,7 @@ export default (): ReactNode => {
                         <li className="nav-item">
                             <NavLink className={({ isActive }) => {
                                 return isActive ? "nav-link active" : "nav-link";
-                            }} to="/formulario">Formulário</NavLink>
+                            }} to="./formulario">Formulário</NavLink>
                         </li>
                     </ul>
                 </div>

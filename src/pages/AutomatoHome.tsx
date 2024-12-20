@@ -78,7 +78,7 @@ export default () => {
             {printAutomato()}
             <br />
             <div className="btn-group float-end" role="group" aria-label="Basic example">
-                <button className="btn btn-primary" type="button"><Link className="btn btn-primary" to="/">Voltar</Link></button>
+                <button className="btn btn-primary" type="button"><Link className="btn btn-primary" to="../">Voltar</Link></button>
                 <button className="btn btn-primary" type="button" onClick={e => saveAutomato(e)}>Salvar</button>
             </div>
 
