@@ -107,9 +107,9 @@ export default class AF {
                 letrasEstados.push(letrasEstado);
             });
 
-            this.estados.forEach((e, i) => {
+            this.estados.forEach((_e, i) => {
                 novosEstados.push([]);
-                this.alfabeto.forEach((letra, indiceLetra) => {
+                this.alfabeto.forEach((_letra, indiceLetra) => {
                     novosEstados[i].push([]);
                     let fechoEstado = fechosEstados[i];
                     let aux: Array<string> = [];

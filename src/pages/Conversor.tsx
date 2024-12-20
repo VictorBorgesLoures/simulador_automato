@@ -2,7 +2,7 @@ import { MouseEvent, useState } from "react"
 import { useOutletContext, useNavigate } from "react-router-dom"
 import IOutletContext from "../interfaces/IOutletContext";
 
-export default (props: any) => {
+export default () => {
 
     let { afProvider }: IOutletContext = useOutletContext();
     let [tipo, setTipo] = useState(afProvider.afState?.getTipo());

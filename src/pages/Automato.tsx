@@ -1,10 +1,10 @@
 import AFProvider from "../context/AFContext";
 import IAFProvider from "../interfaces/IAFProvider";
-import { Outlet, useNavigate, Link, Route, Routes } from "react-router-dom";
+import { Outlet, useNavigate} from "react-router-dom";
 import NavbarAutomato from "../components/navbarAutomato";
 import AF from "../classes/AF";
 
-export default (props: any) => {
+export default () => {
 
     let afProvider: IAFProvider = AFProvider();
     const navigate = useNavigate();

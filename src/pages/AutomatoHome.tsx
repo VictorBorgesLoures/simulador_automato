@@ -1,8 +1,8 @@
-import { MouseEvent, useState } from "react";
+import { MouseEvent } from "react";
 import { Link, useOutletContext } from "react-router-dom";
 import IOutletContext from "../interfaces/IOutletContext";
 
-export default (props: any) => {
+export default () => {
 
     let { afProvider }: IOutletContext = useOutletContext();
 

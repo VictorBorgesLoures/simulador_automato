@@ -1,7 +1,7 @@
 import { ReactNode } from "react"
 import { NavLink } from "react-router-dom"
 
-export default (props: any): ReactNode => {
+export default (): ReactNode => {
 
     return (
         <div className="bg-light">

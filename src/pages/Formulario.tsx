@@ -1,6 +1,5 @@
 import { ChangeEvent, MouseEvent } from "react";
-import { useOutletContext, useNavigate } from "react-router-dom";
-import IOutletContext from "../interfaces/IOutletContext";
+import { useNavigate } from "react-router-dom";
 import AF, { automatoMinified } from "../classes/AF";
 import { ReactNode, useState } from "react";
 
@@ -22,9 +21,7 @@ const automatoDefault: automatoForm = {
     erros: []
 }
 
-export default (props: any) => {
-
-    const context: IOutletContext = useOutletContext();
+export default () => {
     const navigate = useNavigate();
 
     const [formState, setState] = useState<automatoForm>({
