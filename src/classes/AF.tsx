@@ -47,6 +47,11 @@ export default class AF {
             this.minimized = minimized;
     }
 
+    public static fromJson(afData: IautomatoState) {
+        let automatoSaved: automatoMinified = AF.minify(afData);
+        return new AF(automatoSaved.alfabeto, automatoSaved.estados, automatoSaved.estadoInicial, automatoSaved.estadosFinais, automatoSaved.transicoes, automatoSaved.minimized)
+    }
+
     public getTipo(): string {
         if (!this.tipo) {
             this.transicoes.forEach(transicao => {
@@ -86,8 +91,11 @@ export default class AF {
             this.estados.forEach(estado => {
                 let fechoEstado: Array<string> = [];
                 this.transicoes.forEach(t => {
-                    if (t[0] == estado && t[1] == "&" && t[2] != estado)
+                    if (t[0] == estado && t[1] == "&" && t[2] != estado) {
                         fechoEstado.push(t[2]);
+                        if(this.isInEstadoFinal(t[2]))
+                            this.estadosFinais.push(t[0]);
+                    }
                 })
                 fechoEstado.push(estado);
                 fechosEstados.push(fechoEstado);
@@ -140,6 +148,8 @@ export default class AF {
             this.transicoes = novasTransições;
 
             this.tipo = "AFN";
+
+            this.removerDuplicatas();
         }
         return;
     }

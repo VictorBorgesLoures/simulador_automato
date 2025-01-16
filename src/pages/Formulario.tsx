@@ -1,6 +1,6 @@
 import { ChangeEvent, MouseEvent } from "react";
 import { useNavigate } from "react-router-dom";
-import AF, { automatoMinified } from "../classes/AF";
+import AF, { automatoMinified, IautomatoState } from "../classes/AF";
 import { ReactNode, useState } from "react";
 
 interface automatoForm {
@@ -33,7 +33,7 @@ export default () => {
         erros: []
     });
 
-    const [jsonFile, setJsonFile] = useState<automatoMinified>();
+    const [jsonFile, setJsonFile] = useState<IautomatoState>();
     const [loadJson, setLoadJson] = useState<boolean>(true);
 
     function submitForm(event: React.MouseEvent) {
@@ -63,14 +63,14 @@ export default () => {
 
     function handleLoadJson(e: MouseEvent) {
         e.preventDefault();
-        setState({ ...formState, ...jsonFile });
+        setState({ ...formState, ...AF.minify(jsonFile)});
         setLoadJson(true);
     }
 
     function handleJsonUpdate(e: ChangeEvent) {
         e.preventDefault();
         if (e.target.files[0].type == "application/json") {
-            new Response(e.target.files[0]).json().then((json: automatoMinified) => {
+            new Response(e.target.files[0]).json().then((json: IautomatoState) => {
                 let valid = true;
                 Object.keys(json).forEach(k => {
                     switch (k) {
