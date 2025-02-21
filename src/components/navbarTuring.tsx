@@ -6,9 +6,6 @@ export default (): ReactNode => {
     return (
         <div className="bg-light">
             <nav className="container navbar navbar-expand-lg navbar-light bg-light">
-                <NavLink className={({ isActive }) => {
-                    return isActive ? "navbar-brand nav-link active" : "navbar-brand nav-link";
-                }} end to="/">Simulador</NavLink>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -17,17 +14,16 @@ export default (): ReactNode => {
                         <li className="nav-item">
                             <NavLink className={({ isActive }) => {
                                 return isActive ? "nav-link active" : "nav-link";
-                            }} end to="./automato-finito">Autômato Finito</NavLink>
+                            }} to={{
+                                pathname: "/"
+                            }}>Simulador</NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink className={({ isActive }) => {
                                 return isActive ? "nav-link active" : "nav-link";
-                            }} end to="./maquina-turing">Máquina de Turing</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink className={({ isActive }) => {
-                                return isActive ? "nav-link active" : "nav-link";
-                            }} to="./formulario">Formulário</NavLink>
+                            }} end to={{
+                                pathname: "/turing"
+                            }}>Turing</NavLink>
                         </li>
                     </ul>
                 </div>

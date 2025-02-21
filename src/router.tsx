@@ -8,6 +8,9 @@ import Conversor from "./pages/Conversor"
 import Minimizar from "./pages/Minimizar"
 import Leitor from "./pages/Leitor"
 import NotFound from "./pages/notFound"
+import MaquinaTuringHome from "./pages/MaquinaTuringHome"
+import AutomatoFinitoHome from "./pages/AutomatoFinitoHome"
+import MaquinaTuring from "./pages/MaquinaTuring"
 
 const router = createHashRouter(
     [
@@ -18,6 +21,16 @@ const router = createHashRouter(
                 {
                     path: "",
                     element: <Home />
+
+                },
+                {
+                    path: "automato-finito",
+                    element: <AutomatoFinitoHome />
+
+                },
+                {
+                    path: "maquina-turing",
+                    element: <MaquinaTuringHome />
 
                 },
                 {
@@ -55,6 +68,10 @@ const router = createHashRouter(
                     element: <NotFound />
                 }
             ]
+        },
+        {
+            path: "turing",
+            element: <MaquinaTuring />            
         }
     ]
 );

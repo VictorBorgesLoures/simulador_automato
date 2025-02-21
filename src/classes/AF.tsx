@@ -514,7 +514,6 @@ export default class AF {
         let found = true;
         Object.values(this.erros).forEach(erro => {
             if (erro.length > 0) {
-                console.log(erro);
                 found = false;
                 return;
             }
